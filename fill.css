@@ -1,0 +1,354 @@
+
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.question {
+}
+
+body {
+  overflow-x: hidden;
+  background: grey;
+  transition: all 5s;
+  position: relative;
+background-size: cover;
+background-repeat: no-repeat;
+padding: 10px 0;
+min-height: 100vh;
+}
+
+h2 {
+text-transform: uppercase;
+padding: 0 0 15px;
+font-family: 'Poppins', sans-serif;
+font-weight: 800;
+}
+
+.background-overlay {
+  position: absolute;
+  width: 100vw;
+  height: 110vh;
+  top: -20px;
+  background: black;
+  z-index: -999;
+  transition: 5s;
+}
+
+
+#button {
+  position: absolute;
+  top: 50%; /** */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 30px 80px;
+  border-radius: 50px;
+  border: 2px solid black;
+  color: white;
+  outline: none;
+  background: #111;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 2rem;
+  background: linear-gradient(90deg,
+  #03a9f4, #f441a5, #ffeb3b, #03a9f4
+  );
+  background-size: 400%;
+  transition: all 3s;
+  font-family: 'Rubik Vinyl', cursive;;
+}
+
+#button:active,
+#button:hover,
+#button:focus{
+  
+}
+
+
+#button::before {
+  content:'';
+  background: inherit;
+  filter: blur(50px);
+  
+  position: absolute;
+  
+  top: 50%;
+  left: 50%;
+  
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  animation: glow 4s linear infinite;
+}
+
+.shabu {
+  border: 2px solid black;
+  border-radius: 20px;
+  color: black;
+  display: inline-block;
+  padding: 8px 23px;
+  margin: 10px 20px;
+  background: white;
+  text-transform: uppercase;
+  font-family: 'Courier Prime', monospace;
+/*  filter: blur(10px); */
+}
+
+
+@keyframes glow {
+  0% {
+    background-position: 0%;
+  }
+  
+  100% {
+    background-position: 400%;
+  }
+}
+
+.check {
+  font-size: 2.5rem;
+  float: left;
+  padding: 0 5px 5px 0;
+}
+
+
+.input {
+ border: none; 
+ border-bottom: 2px solid black;
+ font-size: 1rem;
+ transition: all 0.3s ease;
+ background: none;
+ font-family: 'Poppins', sans-serif;
+}
+
+.theQuestion {
+  line-height: 1.7rem;
+  text-align: justify;
+  color: black;
+  transition: 1s all;
+  font-family: 'Poppins', sans-serif;
+}
+
+
+.input:disabled {
+  border: none;
+  background: none;
+  color: black;
+}
+
+.input:focus {
+  border: none;
+  background: rgba(0,0,0,0.3);
+  outline: none;
+  border-bottom: 1px solid black;
+}
+
+.border {
+  border: none;
+  background: red;
+  height: 2px;
+  width:50px;
+  margin: 0 0 5px;
+}
+
+.question {
+  margin: 20px;
+  position: relative;
+  background: white;
+  border: 5px solid red;
+  padding: 20px;
+/*   */
+ /* 
+ background: url("dog.jpeg");
+  background-position: center;
+  background-size: cover;
+  color: white;
+  */
+  
+  
+}
+
+.dark-gradient {
+  position: relative;
+  border: 3px solid black;
+  
+}
+
+.question > * {
+  position: relative;
+  z-index: 22;
+}
+
+.dark-gradient::before {
+  content:'';
+  background: rgba(0,0,0,.65);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+z-index: 0;
+}
+
+#next {
+  position: relative;
+  
+  left: -50%;
+  transition: 2s all;
+  color: black;
+  padding: 0;
+  visibility: hidden;
+  opacity: 0;
+  text-transform: uppercase;
+      background: white;
+      position: relative;
+      margin: 20px auto;
+      display: block;
+      outline: none;
+      border: none;
+     font-family: 'Press Start 2P', cursive;
+      background: linear-gradient(90deg, 
+      rgba(116,141,221,1) 0%, 
+      rgba(8,57,212,1) 20%, 
+      rgba(255,255,255,1) 40%, 
+      rgba(16,52,215,1) 60%, 
+      rgba(138,148,195,1) 80%,
+      rgba(116,141,221,1) 100%);
+      
+      background-size: 600%;
+      animation: next 1s ease-in-out infinite, nextGlow 5s linear infinite;
+}
+
+@keyframes nextGlow {
+  0% {
+    background-position: 0%;
+  }
+  
+  100% {
+    background-position: 600%;
+  }
+  
+  
+}
+
+  
+    
+    
+        #next::before {
+      content: '';
+      position: absolute;
+      left: -10px;
+      bottom: -5px;
+      background: black;
+      width: 10px;
+      height: 100%;
+      transform: skewY(-45deg);
+      background: linear-gradient(
+        90deg,
+        rgba(255, 0, 0, 1) 0%,
+        rgba(255, 154, 0, 1) 10%,
+        rgba(208, 222, 33, 1) 20%,
+        rgba(79, 220, 74, 1) 30%,
+        rgba(63, 218, 216, 1) 40%,
+        rgba(47, 201, 226, 1) 50%,
+        rgba(28, 127, 238, 1) 60%,
+        rgba(95, 21, 242, 1) 70%,
+        rgba(186, 12, 248, 1) 80%,
+        rgba(251, 7, 217, 1) 90%,
+        rgba(255, 0, 0, 1) 100%
+    );
+      background-position: center;
+      background-size: 1000%;
+      animation: glow 20s linear infinite;
+    }
+    
+    
+    @keyframes next {
+      0% {
+       transform: rotate(0deg);
+        
+        
+      }
+      
+      20% {
+        
+        transform: rotate(5deg);
+      }
+      
+      50% {
+        
+        transform: rotate(0deg);
+      }
+      
+      
+      80% {
+        
+        transform: rotate(-5deg);
+      }
+      
+      100% {
+        transform: rotate(0deg);
+      }
+    }
+   
+   
+
+    
+    #next::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+     left: -5px;
+      background: black;
+      height: 10px;
+      width: 100%;
+      transform: skewX(-45deg);
+      background: linear-gradient(
+        90deg,
+        rgba(255, 0, 0, 1) 0%,
+        rgba(255, 154, 0, 1) 10%,
+        rgba(208, 222, 33, 1) 20%,
+        rgba(79, 220, 74, 1) 30%,
+        rgba(63, 218, 216, 1) 40%,
+        rgba(47, 201, 226, 1) 50%,
+        rgba(28, 127, 238, 1) 60%,
+        rgba(95, 21, 242, 1) 70%,
+        rgba(186, 12, 248, 1) 80%,
+        rgba(251, 7, 217, 1) 90%,
+        rgba(255, 0, 0, 1) 100%
+    );
+      background-position: center;
+      background-size: 1000%;
+      animation: glow 20s linear infinite;
+    }
+    
+    
+    
+    
+    @keyframes glow {
+  0% {
+    background-position: 0%;
+  }
+  
+  100% {
+    background-position: 1000%;
+  }
+}
+
+    .video {
+      width: 0;
+     border: none;
+     margin: 20px auto;
+     background: red;
+     display: block;
+     transition: 5s all;
+    }
+    
+    
+      #aud {
+      display: none;
+    }
+    
+    
